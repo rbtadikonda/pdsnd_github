@@ -1,17 +1,22 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
 
-### Date created
-Include the date you created this project and README file.
+### Date Created 
+ March 04, 2021
 
-### Project Title
-Replace the Project Title
+### Project Title 
+ Bikei Share Project - By Raghubabu Tadikonda
 
 ### Description
-Describe what your project is about and what it does
+ This project makes use of Python to explore data related to bike share systems for three major cities in the United States -
+ Chicago, New York City, and Washington. This project imports the data (data is in a separate CSV file for each city) and answer
+ interesting questions about it by computing descriptive statistics. This project has a script that takes in raw input to create 
+ an interactive experience in the terminal to present these statistics.
 
 ### Files used
-Include the files used
+bikeshare.py
+chicago.csv
+newyorkcity.csv
+washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+ 1) Adding colored text to the terminal : https://stackoverflow.com/questions/287871/how-to-print-colored-text-to-the-terminal
+ 2) Clean up unnecessary Columns from DataFrame : https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html
