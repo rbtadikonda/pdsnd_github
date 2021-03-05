@@ -2,6 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
+#Global variables are declared here
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -216,11 +217,11 @@ def display_raw_data(df):
     #Ref : https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html
     df = df.drop(['month', 'day_of_week', 'hour', 'Trip Itinerary'], axis=1)
     show_raw_data = input('\nWould like to see 5 lines of raw data? Enter yes or no.\n')
-    idx = 0
+    idx = 0                                                         #initialize the index
     print('dataframe rows is {}'.format(df.shape[0]))
     while True:
         if show_raw_data.lower() == 'yes':
-            end_idx = idx + 5
+            end_idx = idx + 5                                       #increment the index by 5, to show next 5 records
             #ending index is less than dataframe row count
             if (end_idx < df.shape[0]):
                 print(df.iloc[idx : end_idx]) 
