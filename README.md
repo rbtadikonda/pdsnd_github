@@ -14,9 +14,11 @@
 ### Files used
 bikeshare.py
 chicago.csv
-newyorkcity.csv
+new_york_city.csv
 washington.csv
 
 ### Credits
  1) Adding colored text to the terminal : https://stackoverflow.com/questions/287871/how-to-print-colored-text-to-the-terminal
  2) Clean up unnecessary Columns from DataFrame : https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html
+ 3) Python Data Science Handbook by Jake VanderPlas
+ 4) Pandas 1.x cookbook by Matt Harrison and Theodore Petrou
