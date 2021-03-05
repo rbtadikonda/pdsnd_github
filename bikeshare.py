@@ -10,6 +10,9 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 MONTH_NAMES = ["january", "february", "march", "april", "may", "june", "all"]
 WEEK_DAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "all"]
 
+SECS_PER_HOUR = 3600
+SECS_OR_MIN_PER_MIN_OR_HOUR = 60
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -128,7 +131,7 @@ def trip_duration_stats(df):
     print('\nMean travel time is : {}'.format(mean_travel_time))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
 
 def user_stats(df):
@@ -164,18 +167,18 @@ def convert_to_hours(time_in_secs):
        returns: time duration in hours, minutes and seconds (i.e., x hours y minutes and z seconds)
     """
 
-    if time_in_secs < 60 :
+    if time_in_secs < SECS_OR_MIN_PER_MIN_OR_HOUR :
         return str(time_in_secs) + ' seconds'
-    elif time_in_secs < 3600 :
-        minit = int(time_in_secs // 60)
-        secs = int(time_in_secs - minit * 60)
+    elif time_in_secs < SECS_PER_HOUR :
+        minit = int(time_in_secs // SECS_OR_MIN_PER_MIN_OR_HOUR)
+        secs = int(time_in_secs - minit * SECS_OR_MIN_PER_MIN_OR_HOUR)
         val = str(minit) + ' minutes'
         if secs != 0 :
             val += ' and ' + str(secs) + ' seconds'
     else :
-        hour = int(time_in_secs // 3600)
-        minit = int((time_in_secs - hour * 3600) // 60)
-        secs  = int(time_in_secs - minit * 60 - hour * 3600)
+        hour = int(time_in_secs // SECS_PER_HOUR)
+        minit = int((time_in_secs - hour * SECS_PER_HOUR) // SECS_OR_MIN_PER_MIN_OR_HOUR)
+        secs  = int(time_in_secs - minit * SECS_OR_MIN_PER_MIN_OR_HOUR - hour * SECS_PER_HOUR)
         val = str(hour) + ' hours'
         if minit != 0 :
             val += ' and ' +  str(minit) + ' minutes'
